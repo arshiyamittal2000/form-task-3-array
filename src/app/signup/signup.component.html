@@ -1,0 +1,55 @@
+<div class="container">
+	<div [hidden]="submitted || confirm">
+		<h1>Signup Form</h1>
+		<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+			<div class="form-group">
+				<label for="fname">First name</label>
+				<input type="text" class="form-control" id="fname" required [(ngModel)]="model.fname" name="fname" #fname="ngModel">
+				<div [hidden]="fname.valid || fname.pristine" class="alert alert-danger">
+					First name is required
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="lname">Last name</label>
+				<input type="text" class="form-control" id="lname" required [(ngModel)]="model.lname" name="lname" #lname="ngModel">
+				<div [hidden]="lname.valid || lname.pristine" class="alert alert-danger">
+					Last name is required
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="gender">Gender</label>
+				<select class="form-control" id="gender" required [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+          <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+        </select>
+				<div [hidden]="gender.valid || gender.pristine" class="alert alert-danger">
+					Gender is required
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-success" [disabled]="!signupForm.form.valid">Submit</button>
+		</form>
+	</div>
+
+	<div [hidden]="submitted">
+		<h2>it is submitted:</h2>
+		<div class="row">
+			<div class="col-xs-3">First Name</div>
+			<div class="col-xs-9  pull-left">{{ model.fname }}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Last name</div>
+			<div class="col-xs-9 pull-left">{{ model.lname }}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Gender</div>
+			<div class="col-xs-9 pull-left">{{ model.gender }}</div>
+		</div>
+		<br>
+		<button class="btn btn-primary" (click)="submitted=false">Edit</button>
+		<button class="btn btn-primary" (click)="confirmSubmit()">Confirm</button>
+	</div>
+		<div [hidden]="!confirm">
+			<h3>Thank you: {{model.fname}} {{model.lname}}</h3>
+</div>

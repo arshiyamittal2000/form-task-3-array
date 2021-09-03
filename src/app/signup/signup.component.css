@@ -1,0 +1,10 @@
+.ng-valid[required], 
+.ng-valid.required  
+{
+    border-left:solid hotpink; 
+  }
+  
+  .ng-invalid:not(form)  
+  {
+    border-left:solid rebeccapurple; 
+  }
