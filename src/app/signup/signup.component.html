@@ -4,7 +4,7 @@
 		<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
 			<div class="form-group">
 				<label for="fname">First name</label>
-				<input type="text" class="form-control" id="fname" required [(ngModel)]="model.fname" name="fname" #fname="ngModel">
+				<input type="text" class="form-control" id="fname" required [(ngModel)]="model.fname" name="fname" >
 				<div [hidden]="fname.valid || fname.pristine" class="alert alert-danger">
 					First name is required
 				</div>
@@ -12,7 +12,7 @@
 
 			<div class="form-group">
 				<label for="lname">Last name</label>
-				<input type="text" class="form-control" id="lname" required [(ngModel)]="model.lname" name="lname" #lname="ngModel">
+				<input type="text" class="form-control" id="lname" required [(ngModel)]="model.lname" name="lname" >
 				<div [hidden]="lname.valid || lname.pristine" class="alert alert-danger">
 					Last name is required
 				</div>
@@ -20,7 +20,9 @@
 
 			<div class="form-group">
 				<label for="gender">Gender</label>
-				<select class="form-control" id="gender" required [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+				<select class="form-control" id="gender" required [(ngModel)]="model.gender" name="gender">
+					
+				</select>
           <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
         </select>
 				<div [hidden]="gender.valid || gender.pristine" class="alert alert-danger">

@@ -10,7 +10,10 @@ import { SignupModel } from './signupModel';
 export class SignupComponent {
 
   genders = ['Male', 'Female'];
-  model = new SignupModel();
+  model = {fname: '',
+    lname: '',
+    gender: ''
+  }
   submitted = false;
   confirm = false;
 

@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from "./signup/signup.component";
+import { ArrayFormComponent } from "./array-form/array-form.component";
 
 @NgModule({
   declarations: [
     AppComponent, 
-    SignupComponent
+    SignupComponent,
+    ArrayFormComponent,
+    ReactiveFormsModule
   ],
   imports: [
     BrowserModule,
@@ -17,6 +20,6 @@ import { SignupComponent } from "./signup/signup.component";
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

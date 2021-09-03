@@ -1,1 +1,9 @@
 <app-signup></app-signup>
+<form #detailForm="ngForm" (ngSubmit)="submit(detailForm)">
+    form task 3：<br>
+    <input name="id" ngModel type="text" placeholder="name that you are crzay for"><br>
+    <array-form name="detail" [form]="detailForm"></array-form>
+    <button type="submit">submit</button>
+</form>
+
+
